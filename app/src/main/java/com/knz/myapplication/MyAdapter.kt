@@ -48,7 +48,7 @@ class MyAdapter(private val newList : ArrayList<DataClass>) : RecyclerView.Adapt
                     1 -> context.startActivity(Intent(context, SecondActivity::class.java))
                     2 -> context.startActivity(Intent(context, ListViewTest::class.java))
                     3 -> context.startActivity(Intent(context, ThirdActivity::class.java))
-                    4 -> context.startActivity(Intent(context, CalculatorActivity::class.java))
+                    4 -> context.startActivity(Intent(context, CalculatorSplash::class.java))
                     5 -> context.startActivity(Intent(context, SecundomerShpiko::class.java))
                     6 -> {
                         val url = "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%88%D0%BA%D0%B0"

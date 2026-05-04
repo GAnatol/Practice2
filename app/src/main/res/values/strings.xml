@@ -26,12 +26,14 @@
     <string name="reset">Reset</string>
 
 
+    <string name="calculator">Калькулятор</string>
+
     <string-array name="head">
         <item>Главный экран</item>
         <item>Характеристика</item>
         <item>Плейлист</item>
         <item>Расписание</item>
-        <item>Калькулятор</item>
+        <item>@string/calculator</item>
         <item>Секундомер</item>
         <item>Кошка</item>
     </string-array>
