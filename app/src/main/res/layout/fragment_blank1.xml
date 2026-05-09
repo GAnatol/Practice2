@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#17232f"
+    tools:context=".FragmentBlank1">
+
+    <TextView
+        android:id="@+id/blank1_output"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/white_blckthme"
+        android:textSize="50sp"
+        android:layout_gravity="center"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:padding="1dp"
+        android:layout_marginTop="150dp"
+        android:elevation="10dp"
+        android:translationZ="10dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        >
+
+        <EditText
+            android:id="@+id/blank1_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Написать сообщение"
+            android:textColorHint="#B3c4c4c4"
+            android:text=""
+            android:textColor="@color/white_blckthme"
+            android:layout_gravity="center"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="25dp"
+            />
+
+        <ImageButton
+            android:id="@+id/blank1_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/send"
+            app:tint="@color/white_blckthme"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="13dp"
+            android:elevation="10dp"
+            android:translationZ="10dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -51,5 +51,12 @@ dependencies {
     implementation("com.ms-square:expandableTextView:0.1.4")
     implementation ("net.objecthunter:exp4j:0.4.8")
 
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx.v251)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.core.ktx)
+
 }
 

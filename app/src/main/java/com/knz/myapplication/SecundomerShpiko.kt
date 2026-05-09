@@ -58,7 +58,7 @@ class SecundomerShpiko : AppCompatActivity() {
             if (running) {
                 saveOffset()
                 chronometer.stop()
-                running = false // Теперь старт снова сможет сработать
+                running = false
             }
         }
 
@@ -69,7 +69,6 @@ class SecundomerShpiko : AppCompatActivity() {
                 chronometer.stop()
                 running = false
             }
-            // Если хочешь, чтобы после сброса время просто обнулилось, но не шло:
             chronometer.base = SystemClock.elapsedRealtime()
             offset = 0
         }

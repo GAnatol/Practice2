@@ -19,9 +19,6 @@ class RecycleViewActivity : AppCompatActivity() {
     private lateinit var textBonkId : Array<String>
 
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,8 +30,6 @@ class RecycleViewActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
-
-
         }
 
         imageid = arrayOf(
@@ -44,38 +39,29 @@ class RecycleViewActivity : AppCompatActivity() {
             R.drawable.briefcase_outline,
             R.drawable.calculator,
             R.drawable.clock_fast,
-            R.drawable.cat
+            R.drawable.cat,
+            R.drawable.view_dashboard_outline
         )
 
-        // Получение строковых ресурсов и сохранение их в массивах
+
         textId = resources.getStringArray(R.array.head)
         textBonkId = resources.getStringArray(R.array.description)
 
 
-        // Находим RecyclerView в макете по его ID
         newRecycleView = findViewById(R.id.recycleView)
-        // Установка менеджера компоновки для RecyclerView
         newRecycleView.layoutManager = LinearLayoutManager(this)
-        //recyclerView не планирует изменять размеры своих дочерних элементов
-//        динамически.
         newRecycleView.setHasFixedSize(true)
-
-        // Инициализация нового списка для хранения данных
         newArrayList = arrayListOf<DataClass>()
         getUserdata()
 
     }
 
     private fun getUserdata() {
-    // Проход по индексам изображений
         for (i in imageid.indices)
         {
-            // Создание нового экземпляра DataClass для каждого элемента
             val data = DataClass(imageid[i],textId[i],textBonkId[i])
-    // Добавление созданного экземпляра в список newArrayList
             newArrayList.add(data)
         }
-    // Установка адаптера для RecyclerView с заполненным списком данных
         newRecycleView.adapter = MyAdapter(newArrayList)
     }
 

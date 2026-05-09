@@ -11,13 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import kotlin.jvm.java
 
-// Импорт DataClass не нужен, если ты находишься в том же пакете
-
 class MyAdapter(private val newList : ArrayList<DataClass>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
-
-    // 1. Исправлено название на onCreateViewHolder (с маленькой 'o')
     override fun onCreateViewHolder (parent: ViewGroup, viewType: Int): MyViewHolder {
-        // Убедись, что файл list_item2.xml существует в папке res/layout
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item2, parent, false)
         return MyViewHolder(itemView)
     }
@@ -28,20 +23,13 @@ class MyAdapter(private val newList : ArrayList<DataClass>) : RecyclerView.Adapt
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = newList[position]
-        // 2. Используем правильные имена переменных в camelCase
         holder.imageView.setImageResource(currentItem.titleImage)
         holder.txtHead.text = currentItem.heading
         holder.txtBonk.text = currentItem.bonktxt
 
 
-/*        <item>стартовая активность</item>
-        <item>характеристика</item>
-        <item>плейлист</item>
-        <item>расписание</item>
-        <item>секундомер</item>
-        <item>кошка</item>*/
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context // Берем контекст здесь
+            val context = holder.itemView.context
             try {
                 when (position) {
                     0 -> context.startActivity(Intent(context, MainActivity::class.java))
@@ -56,15 +44,14 @@ class MyAdapter(private val newList : ArrayList<DataClass>) : RecyclerView.Adapt
                         try {
                             context.startActivity(intent)
                         } catch (e: Exception) {
-                            Toast.makeText(context, "не удалось", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "не удалось перейти по ссылке", Toast.LENGTH_SHORT).show()
                         }
                     }
+                    7 -> context.startActivity(Intent(context, FragmentsActivity::class.java))
                 }
             } catch (e: Exception) {
-                // Если активность не найдена или ошибка в коде, приложение не упадет,
-                // а покажет уведомление
                 Toast.makeText(context, "Ошибка: ${e.message}", Toast.LENGTH_LONG).show()
-                e.printStackTrace() // Выведет ошибку в Logcat
+                e.printStackTrace()
             }
         }
     }
