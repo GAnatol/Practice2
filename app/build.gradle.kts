@@ -58,5 +58,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.core.ktx)
 
+    implementation(libs.play.services.location)
+    implementation(libs.volley)
+
 }
 

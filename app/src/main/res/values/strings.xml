@@ -37,6 +37,7 @@
         <item>Секундомер</item>
         <item>Кошка</item>
         <item>Fragments</item>
+        <item>Погода</item>
     </string-array>
 
     <string-array name="description">
@@ -48,5 +49,6 @@
         <item>chronometer</item>
         <item>тест перехода по ссылке</item>
         <item>10prak</item>
+        <item>11 prak</item>
     </string-array>
 </resources>

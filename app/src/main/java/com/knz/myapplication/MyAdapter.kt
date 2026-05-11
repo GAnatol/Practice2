@@ -48,6 +48,7 @@ class MyAdapter(private val newList : ArrayList<DataClass>) : RecyclerView.Adapt
                         }
                     }
                     7 -> context.startActivity(Intent(context, FragmentsActivity::class.java))
+                    8 -> context.startActivity(Intent(context, WeatherActivity::class.java))
                 }
             } catch (e: Exception) {
                 Toast.makeText(context, "Ошибка: ${e.message}", Toast.LENGTH_LONG).show()
