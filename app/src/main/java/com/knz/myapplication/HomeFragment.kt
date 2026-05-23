@@ -25,8 +25,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             R.drawable.calculator,
             R.drawable.clock_fast,
             R.drawable.cat,
-            R.drawable.view_dashboard_outline,
-            R.drawable.cloud_outline
+            R.drawable.view_dashboard_outline
         )
 
         textId = resources.getStringArray(R.array.head)

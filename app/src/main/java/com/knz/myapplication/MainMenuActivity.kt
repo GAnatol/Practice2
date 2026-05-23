@@ -36,8 +36,9 @@
                         true
                     }
                     R.id.weather -> {
-                        val intent = Intent(this, WeatherActivity::class.java)
-                        startActivity(intent)
+                        supportFragmentManager.beginTransaction()
+                            .replace(R.id.nav_host_fragment, WeatherFragment())
+                            .commit()
                         true
                     }
                     R.id.login -> {

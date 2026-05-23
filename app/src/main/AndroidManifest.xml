@@ -25,9 +25,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WeatherActivity"
-            android:exported="false" />
-        <activity
             android:name=".FragmentsActivity"
             android:exported="false" />
         <activity

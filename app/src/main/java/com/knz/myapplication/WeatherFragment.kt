@@ -2,19 +2,20 @@ package com.knz.myapplication
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.Fragment
 import com.android.volley.NetworkResponse
 import com.android.volley.Response
 import com.android.volley.toolbox.HttpHeaderParser
@@ -24,7 +25,7 @@ import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import org.json.JSONObject
 
-class WeatherActivity : AppCompatActivity() {
+class WeatherFragment : Fragment(R.layout.fragment_weather) {
     val api_key = "55e00b845d5f04aa9834cc0d9a0db195"
 
     private lateinit var btVar1: Button
@@ -34,22 +35,21 @@ class WeatherActivity : AppCompatActivity() {
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private val LOCATION_PERMISSION_REQUEST_CODE = 1
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_weather)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        ViewCompat.setOnApplyWindowInsetsListener(view.findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        textView = findViewById(R.id.textView)
-        btVar1 = findViewById(R.id.btVar1)
-        cityInput = findViewById(R.id.city_input)
-        searchBtn = findViewById(R.id.search_btn)
+        textView = view.findViewById(R.id.textView)
+        btVar1 = view.findViewById(R.id.btVar1)
+        cityInput = view.findViewById(R.id.city_input)
+        searchBtn = view.findViewById(R.id.search_btn)
 
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireContext())
 
         btVar1.setOnClickListener {
             checkForPermission()
@@ -59,20 +59,20 @@ class WeatherActivity : AppCompatActivity() {
             val cityName = cityInput.text.toString().trim()
             if (cityName.isNotEmpty()) {
                 val encodedCity = java.net.URLEncoder.encode(cityName, "UTF-8")
-
                 val weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&appid=${api_key}&lang=ru"
                 getTemp(weatherUrl)
             } else {
-                Toast.makeText(this, "Введите название города", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Введите название города", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun checkForPermission() {
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
-            ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(
-                this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
+        if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+            ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+
+            requestPermissions(
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION),
                 LOCATION_PERMISSION_REQUEST_CODE
             )
         } else {
@@ -86,7 +86,7 @@ class WeatherActivity : AppCompatActivity() {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                 obtainLocation()
             } else {
-                Toast.makeText(this, "Разрешение отклонено", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Разрешение отклонено", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -99,16 +99,16 @@ class WeatherActivity : AppCompatActivity() {
                     val weatherUrl = "https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&units=metric&appid=${api_key}&lang=ru"
                     getTemp(weatherUrl)
                 } else {
-                    Toast.makeText(this, "Не удалось получить местоположение", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Не удалось получить местоположение", Toast.LENGTH_SHORT).show()
                 }
             }
             .addOnFailureListener {
-                Toast.makeText(this, "Ошибка получения геолокации", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Ошибка получения геолокации", Toast.LENGTH_SHORT).show()
             }
     }
 
     private fun getTemp(url: String) {
-        val queue = Volley.newRequestQueue(this)
+        val queue = Volley.newRequestQueue(requireContext())
         val stringReq = object : StringRequest(
             Method.GET, url,
             Response.Listener { response ->
@@ -119,7 +119,7 @@ class WeatherActivity : AppCompatActivity() {
 
                 textView.text = "${temperature}°C в г. ${city}"
             },
-            Response.ErrorListener { error ->
+            Response.ErrorListener {
                 textView.text = "Ошибка сети"
             }
         ) {

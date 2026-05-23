@@ -26,18 +26,15 @@
     <string name="reset">Reset</string>
 
 
-    <string name="calculator">Калькулятор</string>
-
     <string-array name="head">
         <item>Главный экран</item>
         <item>Характеристика</item>
         <item>Плейлист</item>
         <item>Расписание</item>
-        <item>@string/calculator</item>
+        <item>Калькулятор</item>
         <item>Секундомер</item>
         <item>Кошка</item>
         <item>Fragments</item>
-        <item>Погода</item>
     </string-array>
 
     <string-array name="description">
@@ -48,16 +45,6 @@
         <item>цифры</item>
         <item>chronometer</item>
         <item>тест перехода по ссылке</item>
-        <item>10prak</item>
-        <item>11 prak</item>
+        <item>мессенджер O, Leg</item>
     </string-array>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
 </resources>
