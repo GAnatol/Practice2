@@ -9,17 +9,16 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.knz.myapplication.databinding.ActivitySecondBinding
-import com.knz.myapplication.databinding.ActivityThirdBinding
+import com.knz.myapplication.databinding.ActivityTimetableBinding
 
-class ThirdActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityThirdBinding
+class TimetableActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityTimetableBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityThirdBinding.inflate(layoutInflater)
+        binding = ActivityTimetableBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->

@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var newRecycleView: RecyclerView
-    private lateinit var newArrayList: ArrayList<DataClass>
+    private lateinit var newArrayList: ArrayList<HomeFragmentDataClass>
     private lateinit var imageid: Array<Int>
     private lateinit var textId: Array<String>
     private lateinit var textBonkId: Array<String>
@@ -42,9 +42,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun getUserdata() {
         for (i in imageid.indices) {
-            val data = DataClass(imageid[i], textId[i], textBonkId[i])
+            val data = HomeFragmentDataClass(imageid[i], textId[i], textBonkId[i])
             newArrayList.add(data)
         }
-        newRecycleView.adapter = MyAdapter(newArrayList)
+        newRecycleView.adapter = HomeFragmentAdapter(newArrayList)
     }
 }

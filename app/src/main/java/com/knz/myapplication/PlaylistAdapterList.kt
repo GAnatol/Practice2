@@ -9,11 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 
 
-class AdapterList(context : Context,private val items: List<ListItem>) : ArrayAdapter<ListItem>(context,0,items) {
+class PlaylistAdapterList(context : Context, private val items: List<PlaylistListItem>) : ArrayAdapter<PlaylistListItem>(context,0,items) {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val item = getItem(position)
 
-        val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.list_item,parent,false)
+        val view = convertView ?: LayoutInflater.from(context).inflate(R.layout.playlist_list_item,parent,false)
 
         val imageView : ImageView = view.findViewById(R.id.ImageView)
         val textView : TextView = view.findViewById(R.id.tvList)

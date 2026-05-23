@@ -94,21 +94,21 @@ class SecondActivity : AppCompatActivity() {
         val btnSchedule : Button = findViewById(R.id.btn2)
 
         btnSchedule.setOnClickListener {
-            intent = Intent(this, ThirdActivity::class.java)
+            intent = Intent(this, TimetableActivity::class.java)
             startActivity(intent)
         }
 
         val btnSecundomer : Button = findViewById(R.id.btn3)
 
         btnSecundomer.setOnClickListener {
-            intent = Intent(this, SecundomerShpiko::class.java)
+            intent = Intent(this, StopwatchActivity::class.java)
             startActivity(intent)
         }
 
         val btnPlaylist : Button = findViewById(R.id.btn4)
 
         btnPlaylist.setOnClickListener {
-            intent = Intent(this, ListViewTest::class.java)
+            intent = Intent(this, PlaylistActivity::class.java)
             startActivity(intent)
         }
 

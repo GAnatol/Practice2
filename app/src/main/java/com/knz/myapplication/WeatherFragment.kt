@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
@@ -16,6 +17,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.android.volley.NetworkResponse
 import com.android.volley.Response
 import com.android.volley.toolbox.HttpHeaderParser
@@ -23,6 +25,8 @@ import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import org.json.JSONObject
 
 class WeatherFragment : Fragment(R.layout.fragment_weather) {
@@ -61,10 +65,19 @@ class WeatherFragment : Fragment(R.layout.fragment_weather) {
                 val encodedCity = java.net.URLEncoder.encode(cityName, "UTF-8")
                 val weatherUrl = "https://api.openweathermap.org/data/2.5/weather?q=${encodedCity}&units=metric&appid=${api_key}&lang=ru"
                 getTemp(weatherUrl)
+                lifecycleScope.launch {
+                    delay(1000)
+                    it.hideKeyboard()
+                }
             } else {
                 Toast.makeText(requireContext(), "Введите название города", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+    fun View.hideKeyboard() {
+        val input = context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        input.hideSoftInputFromWindow(windowToken, 0)
     }
 
     private fun checkForPermission() {
@@ -80,6 +93,7 @@ class WeatherFragment : Fragment(R.layout.fragment_weather) {
         }
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
@@ -109,7 +123,8 @@ class WeatherFragment : Fragment(R.layout.fragment_weather) {
 
     private fun getTemp(url: String) {
         val queue = Volley.newRequestQueue(requireContext())
-        val stringReq = object : StringRequest(
+        val stringReq = @SuppressLint("SetTextI18n")
+        object : StringRequest(
             Method.GET, url,
             Response.Listener { response ->
                 val obj = JSONObject(response)
@@ -120,7 +135,7 @@ class WeatherFragment : Fragment(R.layout.fragment_weather) {
                 textView.text = "${temperature}°C в г. ${city}"
             },
             Response.ErrorListener {
-                textView.text = "Ошибка сети"
+                textView.text = "Ошибка"
             }
         ) {
             override fun parseNetworkResponse(response: NetworkResponse): Response<String> {

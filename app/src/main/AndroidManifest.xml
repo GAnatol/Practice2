@@ -34,13 +34,13 @@
             android:name=".CalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".ListViewTest"
+            android:name=".PlaylistActivity"
             android:exported="false" />
         <activity
-            android:name=".SecundomerShpiko"
+            android:name=".StopwatchActivity"
             android:exported="false" />
         <activity
-            android:name=".ThirdActivity"
+            android:name=".TimetableActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

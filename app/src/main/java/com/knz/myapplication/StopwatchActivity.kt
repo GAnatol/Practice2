@@ -1,7 +1,6 @@
 package com.knz.myapplication
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.os.SystemClock
 import android.view.View
 import android.widget.Button
@@ -12,7 +11,7 @@ import androidx.core.view.OnApplyWindowInsetsListener
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class SecundomerShpiko : AppCompatActivity() {
+class StopwatchActivity : AppCompatActivity() {
     lateinit var chronometer : Chronometer
     var running : Boolean = false
     var offset : Long = 0
@@ -23,7 +22,7 @@ class SecundomerShpiko : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         this.enableEdgeToEdge()
-        setContentView(R.layout.activity_secundomer_shpiko)
+        setContentView(R.layout.activity_stopwatch)
         ViewCompat.setOnApplyWindowInsetsListener(
             findViewById(R.id.main),
             OnApplyWindowInsetsListener { v: View?, insets: WindowInsetsCompat? ->

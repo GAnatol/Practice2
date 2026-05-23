@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import kotlin.jvm.java
 
-class MyAdapter(private val newList : ArrayList<DataClass>) : RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class HomeFragmentAdapter(private val newList : ArrayList<HomeFragmentDataClass>) : RecyclerView.Adapter<HomeFragmentAdapter.MyViewHolder>() {
     override fun onCreateViewHolder (parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item2, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.home_list_item, parent, false)
         return MyViewHolder(itemView)
     }
 
@@ -34,10 +34,10 @@ class MyAdapter(private val newList : ArrayList<DataClass>) : RecyclerView.Adapt
                 when (position) {
                     0 -> context.startActivity(Intent(context, MainActivity::class.java))
                     1 -> context.startActivity(Intent(context, SecondActivity::class.java))
-                    2 -> context.startActivity(Intent(context, ListViewTest::class.java))
-                    3 -> context.startActivity(Intent(context, ThirdActivity::class.java))
+                    2 -> context.startActivity(Intent(context, PlaylistActivity::class.java))
+                    3 -> context.startActivity(Intent(context, TimetableActivity::class.java))
                     4 -> context.startActivity(Intent(context, CalculatorSplash::class.java))
-                    5 -> context.startActivity(Intent(context, SecundomerShpiko::class.java))
+                    5 -> context.startActivity(Intent(context, StopwatchActivity::class.java))
                     6 -> {
                         val url = "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%88%D0%BA%D0%B0"
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))

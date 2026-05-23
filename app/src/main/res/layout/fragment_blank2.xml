@@ -48,6 +48,7 @@
             android:id="@+id/blank2_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:contentDescription="TODO"
             android:src="@drawable/send"
             app:tint="@color/white_blckthme"
             android:layout_marginEnd="50dp"

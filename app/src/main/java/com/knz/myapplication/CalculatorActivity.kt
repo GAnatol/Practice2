@@ -95,7 +95,6 @@ class CalculatorActivity : AppCompatActivity() {
     private fun addToInputText(value: String) {
         binding.input.append(value)
     }
-    // Функция для получения строки ввода
     private fun getInputExpression(): String {
         return binding.input.text.toString()
     }
