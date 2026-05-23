@@ -115,7 +115,7 @@ class SecondActivity : AppCompatActivity() {
         val btnRView : Button = findViewById(R.id.btnRV)
 
         btnRView.setOnClickListener {
-            intent = Intent(this, RecycleViewActivity::class.java)
+            intent = Intent(this, HomeFragment::class.java)
             startActivity(intent)
         }
     }

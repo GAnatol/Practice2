@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -37,10 +38,19 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
+    implementation(libs.androidx.annotation)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.appcompat)
+    implementation(libs.firebase.auth)
+    implementation(libs.googleid)
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)

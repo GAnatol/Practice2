@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
-        android:icon="@drawable/alien_outline"
+        android:icon="@drawable/home"
         android:title="Home" />
     <item
-        android:id="@+id/search"
-        android:icon="@drawable/briefcase_outline"
-        android:title="Briefcase" />
+        android:id="@+id/weather"
+        android:icon="@drawable/cloud_outline"
+        android:title="Weather" />
     <item
-        android:id="@+id/settings"
-        android:icon="@drawable/cat"
-        android:title="Cat" />
+        android:id="@+id/login"
+        android:icon="@drawable/login"
+        android:title="Login" />
 </menu>

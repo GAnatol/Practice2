@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "120205013061",
+    "project_id": "androidstudioprac",
+    "storage_bucket": "androidstudioprac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120205013061:android:c1c91b4c8e890292a7b32c",
+        "android_client_info": {
+          "package_name": "com.knz.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgHnIKXWwkt0xrbbqI968ortH4fu0mIUo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
