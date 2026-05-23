@@ -14,6 +14,8 @@
     <color name="dark_blue">#0a082f</color>
     <color name="txt_color">#411679</color>
 
+    <color name="hint_white">#B3c4c4c4</color>
+
     <style name="Button_Style" parent="Widget.AppCompat.Button.Colored">
         <item name="android:background">#231d59</item>
         <item name="android:textSize">24sp</item>
