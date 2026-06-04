@@ -36,6 +36,7 @@
         <item>Кошка</item>
         <item>Fragments</item>
         <item>Анимации</item>
+        <item>Голосовой помощник</item>
     </string-array>
 
     <string-array name="description">
@@ -48,5 +49,6 @@
         <item>тест перехода по ссылке</item>
         <item>мессенджер O, Leg</item>
         <item>гифки</item>
+        <item>голос в текст</item>
     </string-array>
 </resources>
