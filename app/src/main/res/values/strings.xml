@@ -38,6 +38,7 @@
         <item>Fragments</item>
         <item>Анимации</item>
         <item>Голосовой помощник</item>
+        <item>Подбор</item>
     </string-array>
 
     <string-array name="description">
@@ -52,5 +53,15 @@
         <item>мессенджер</item>
         <item>гифки</item>
         <item>голос в текст</item>
+        <item>pivo</item>
+    </string-array>
+    
+    
+    <string-array name="type_beer">
+        <item>темное</item>
+        <item>светлое</item>
+        <item>ржаное</item>
+        <item>сладкое</item>
+        <item>горькое</item>
     </string-array>
 </resources>

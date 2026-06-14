@@ -51,6 +51,7 @@ class HomeFragmentAdapter(private val newList : ArrayList<HomeFragmentDataClass>
                     8 -> context.startActivity(Intent(context, FragmentsActivity::class.java))
                     9 -> context.startActivity(Intent(context, AnimsActivitySplash::class.java))
                     10 -> context.startActivity(Intent(context, VoiceAssistantActivity::class.java))
+                    11 -> context.startActivity(Intent(context, BeerActivity::class.java))
                 }
             } catch (e: Exception) {
                 Toast.makeText(context, "Ошибка: ${e.message}", Toast.LENGTH_LONG).show()

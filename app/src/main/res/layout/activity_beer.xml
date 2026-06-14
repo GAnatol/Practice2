@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="32dp"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#FAFAFA"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="подбор"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#3E2723"
+        android:layout_marginBottom="40dp"/>
+
+    <Spinner
+        android:id="@+id/spinBeer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/white_blckthme"
+        android:entries="@array/type_beer"/>
+
+    <Button
+        android:id="@+id/btnBeer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="подобрать"
+        android:textSize="18sp"
+        android:backgroundTint="#FFB300"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp" />
+
+    <Button
+        android:id="@+id/btnRandomBeer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="рандом"
+        android:textSize="18sp"
+        android:backgroundTint="#D32F2F"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/tvBeer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4E342E"
+        android:gravity="center"
+        android:textSize="22sp"
+        android:lineSpacingExtra="8dp"
+        android:padding="16dp"/>
+
+</LinearLayout>

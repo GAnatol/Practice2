@@ -28,7 +28,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             R.drawable.cat,
             R.drawable.view_dashboard_outline,
             R.drawable.sonic_frame_0003,
-            R.drawable.microphone
+            R.drawable.microphone,
+            R.drawable.beer
         )
 
         textId = resources.getStringArray(R.array.head)
