@@ -30,6 +30,7 @@
         <item>Главный экран</item>
         <item>Характеристика</item>
         <item>Плейлист</item>
+        <item>Музыкальный плеер</item>
         <item>Расписание</item>
         <item>Калькулятор</item>
         <item>Секундомер</item>
@@ -40,14 +41,15 @@
     </string-array>
 
     <string-array name="description">
-        <item>первая активность</item>
-        <item>вторая активность</item>
+        <item>стартовое окно</item>
+        <item>много текста, scroll view</item>
         <item>музыка</item>
+        <item>проигрыватель</item>
         <item>ИС254</item>
         <item>цифры</item>
         <item>chronometer</item>
         <item>тест перехода по ссылке</item>
-        <item>мессенджер O, Leg</item>
+        <item>мессенджер</item>
         <item>гифки</item>
         <item>голос в текст</item>
     </string-array>

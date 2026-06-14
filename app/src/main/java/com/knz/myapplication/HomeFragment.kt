@@ -21,12 +21,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             R.drawable.alien_outline,
             R.drawable.account_box_edit_outline,
             R.drawable.music_box_multiple_outline,
+            R.drawable.music_note,
             R.drawable.briefcase_outline,
             R.drawable.calculator,
             R.drawable.clock_fast,
             R.drawable.cat,
             R.drawable.view_dashboard_outline,
-            R.drawable.frame_0003,
+            R.drawable.sonic_frame_0003,
             R.drawable.microphone
         )
 

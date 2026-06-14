@@ -59,6 +59,10 @@
             android:name=".SecondActivity"
             android:exported="false"
             android:hardwareAccelerated="true" />
+        <activity
+            android:name=".MusicPlayerActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

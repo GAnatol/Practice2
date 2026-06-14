@@ -35,10 +35,11 @@ class HomeFragmentAdapter(private val newList : ArrayList<HomeFragmentDataClass>
                     0 -> context.startActivity(Intent(context, MainActivity::class.java))
                     1 -> context.startActivity(Intent(context, SecondActivity::class.java))
                     2 -> context.startActivity(Intent(context, PlaylistActivity::class.java))
-                    3 -> context.startActivity(Intent(context, TimetableActivity::class.java))
-                    4 -> context.startActivity(Intent(context, CalculatorSplash::class.java))
-                    5 -> context.startActivity(Intent(context, StopwatchActivity::class.java))
-                    6 -> {
+                    3 -> context.startActivity(Intent(context, MusicPlayerActivity::class.java))
+                    4 -> context.startActivity(Intent(context, TimetableActivity::class.java))
+                    5 -> context.startActivity(Intent(context, CalculatorSplash::class.java))
+                    6 -> context.startActivity(Intent(context, StopwatchActivity::class.java))
+                    7 -> {
                         val url = "https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%88%D0%BA%D0%B0"
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
                         try {
@@ -47,9 +48,9 @@ class HomeFragmentAdapter(private val newList : ArrayList<HomeFragmentDataClass>
                             Toast.makeText(context, "не удалось перейти по ссылке", Toast.LENGTH_SHORT).show()
                         }
                     }
-                    7 -> context.startActivity(Intent(context, FragmentsActivity::class.java))
-                    8 -> context.startActivity(Intent(context, AnimsActivitySplash::class.java))
-                    9 -> context.startActivity(Intent(context, VoiceAssistantActivity::class.java))
+                    8 -> context.startActivity(Intent(context, FragmentsActivity::class.java))
+                    9 -> context.startActivity(Intent(context, AnimsActivitySplash::class.java))
+                    10 -> context.startActivity(Intent(context, VoiceAssistantActivity::class.java))
                 }
             } catch (e: Exception) {
                 Toast.makeText(context, "Ошибка: ${e.message}", Toast.LENGTH_LONG).show()
